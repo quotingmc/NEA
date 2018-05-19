@@ -118,7 +118,7 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.newToolStripMenuItem.Text = "New";
             // 
             // loadStationDataToolStripMenuItem
@@ -128,7 +128,7 @@
             this.loadStationDataToolStripMenuItem1,
             this.loadTrackDataToolStripMenuItem});
             this.loadStationDataToolStripMenuItem.Name = "loadStationDataToolStripMenuItem";
-            this.loadStationDataToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadStationDataToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.loadStationDataToolStripMenuItem.Text = "Load";
             this.loadStationDataToolStripMenuItem.Click += new System.EventHandler(this.loadStationDataToolStripMenuItem_Click);
             // 
@@ -147,7 +147,7 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -178,20 +178,20 @@
             // trainToolStripMenuItem
             // 
             this.trainToolStripMenuItem.Name = "trainToolStripMenuItem";
-            this.trainToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.trainToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.trainToolStripMenuItem.Text = "Train";
             this.trainToolStripMenuItem.Click += new System.EventHandler(this.trainToolStripMenuItem_Click);
             // 
             // scenarioToolStripMenuItem
             // 
             this.scenarioToolStripMenuItem.Name = "scenarioToolStripMenuItem";
-            this.scenarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.scenarioToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.scenarioToolStripMenuItem.Text = "Scenario";
             // 
             // obstacleToolStripMenuItem
             // 
             this.obstacleToolStripMenuItem.Name = "obstacleToolStripMenuItem";
-            this.obstacleToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.obstacleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.obstacleToolStripMenuItem.Text = "Obstacle";
             // 
             // toolStripDropDownButton1

@@ -28,7 +28,7 @@ namespace Trainline_Sim_Windows_Testing
         //--------------
 
 
-
+        passengerForm passengerForm = new passengerForm();
         //INITIAL GLOBAL VARIABLES
         public static List<Station> stationList = new List<Station>();
         public static List<Track> trackList = new List<Track>();
@@ -379,11 +379,19 @@ namespace Trainline_Sim_Windows_Testing
 
         private void passengerInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            if (passengerInfoToolStripMenuItem.Checked == true)
+            {
+                passengerForm.Show();
+            } else
+            {
+                passengerForm.Hide();
+            }
             toolStripDropDownButton1.ShowDropDown();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {;
+        {
         }
 
         private void timerClock_Tick(object sender, EventArgs e)
@@ -404,68 +412,6 @@ namespace Trainline_Sim_Windows_Testing
         }
     }
 
-
-
-    //****************
-    //  STATION CLASS
-    //****************
-
-
-    public class Station
-    {
-        //CLASS PROPERTIES
-        public int ID;
-        public string name;
-        string sCode;
-        int usage;
-        public int platformsNum;
-        int platformsFree;
-        double passNewChance;
-        int passNewCertain;
-        int passWaiting = 0;
-        Point Location;
-        Random r = new Random();
-
-        //MANUAL CONSTRUCTOR (DEBUG)
-        public Station(string _ID, string _name, string _sCode, string _platformsNum, string _usage)
-        {
-            ID = Convert.ToInt16(_ID);
-            name = _name;
-            usage = Convert.ToInt16(_usage);
-            sCode = _sCode;
-            platformsNum = Convert.ToInt16(_platformsNum);
-            platformsFree = Convert.ToInt16(_platformsNum);
-            passNewCertain = usage / 262800;
-            passNewChance = ((double)usage / 262800) - passNewCertain;
-        }
-
-        //CSV CONSTRUCTOR
-        public Station(string[] stationCSV)
-        {
-            ID = Convert.ToInt16(stationCSV[0]);
-            name = stationCSV[1];
-            sCode = stationCSV[2];
-            platformsNum = Convert.ToInt16(stationCSV[3]);
-            usage = Convert.ToInt32(stationCSV[4]);
-            platformsFree = platformsNum;
-            passNewCertain = usage / 262800;
-            passNewChance = ((double)usage / 262800) - passNewCertain;
-        }
-
-        //NEW PASSENGERS ARRIVING AT STATION
-        public void NewArrivals(bool isPeak)
-        {
-            passWaiting += passNewCertain;
-            if (r.NextDouble() <= passNewChance)
-            {
-                passWaiting += 1;
-            }
-        }
-
-    }
-
-
-
     //****************
     //  TRAIN CLASS
     //****************
@@ -476,40 +422,6 @@ namespace Trainline_Sim_Windows_Testing
         string name;
         Point Location;
         
-    }
-
-
-
-    //****************
-    //  TRACK CLASS
-    //****************
-
-    public class Track
-    {
-        public int length;
-        public int lines = 2;
-
-        //MANUAL CONSTRUCTOR (DEBUG)
-        public Track(int _length, int _lines, int _speedLimit)
-        {
-            length = _length;
-            lines = _lines;
-            int[] speedLimit = new int [lines];
-            bool[] isObstructed = new bool[lines];
-            for(int count = 0; count < _speedLimit; count++)
-            {
-                isObstructed[count] = false;
-                speedLimit[count] = _speedLimit;
-            }
-        }
-
-        //CSV CONSTRUCTOR
-        public Track(string[] trackCSV)
-        {
-            length = Convert.ToInt16(trackCSV[0]);
-            lines = Convert.ToInt16(trackCSV[1]);
-        }
-
     }
 }
 
