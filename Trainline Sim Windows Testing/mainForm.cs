@@ -346,16 +346,48 @@ namespace Trainline_Sim_Windows_Testing
         //------------------
 
 
-
+        public int testValue = 100;
+        Random r = new Random();
         //TICK UPDATES
         private void tick()
         {
-
+            
             foreach (Station x in stationList)
             {
                 x.NewArrivals(true);
             }
             buttonTimeDisplay.Text = Convert.ToString(globalClock);
+            testValue += r.Next(1, 10);
+            updatePassInfoWaiting(0);
+            passengerForm.updateGraph();
+
+        }
+
+
+        private void updatePassInfoWaiting(int position)
+        {
+            //if array is full
+            if(position == 8)
+            {
+                for(int count = 1; count <= 7; count++)
+                {
+                    passengerForm.pointsArray[count] = passengerForm.pointsArray[count - 1];
+                }
+                passengerForm.pointsArray[7] = testValue;
+            }
+            else
+            {
+                if (passengerForm.pointsArray[position] == 0)
+                {
+                    passengerForm.pointsArray[position] = testValue;
+
+                }
+                else
+                {
+                    updatePassInfoWaiting(position + 1);
+                }
+            }
+
         }
 
 

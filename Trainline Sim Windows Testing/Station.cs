@@ -14,7 +14,7 @@ namespace Trainline_Sim_Windows_Testing
         int platformsFree;
         double passNewChance;
         int passNewCertain;
-        int passWaiting = 0;
+        public int passWaiting = 0;
         Point Location;
         Random r = new Random();
 
