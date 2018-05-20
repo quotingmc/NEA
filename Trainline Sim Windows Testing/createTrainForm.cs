@@ -50,5 +50,10 @@ namespace Trainline_Sim_Windows_Testing
             }
 
         }
+
+        private void createTrainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -301,7 +301,7 @@ namespace Trainline_Sim_Windows_Testing
                 string[] lineSplit;
                 string currentLine;
 
-                //Read one line at a time uintil end of file
+                //Read one line at a time until end of file
                 while ((currentLine = sr.ReadLine()) != null)
                 {
                     //Split line into array at commas
