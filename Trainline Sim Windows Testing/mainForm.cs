@@ -346,7 +346,7 @@ namespace Trainline_Sim_Windows_Testing
         //------------------
 
 
-        public int testValue = 100;
+        public int testValue = 2;
         Random r = new Random();
         //TICK UPDATES
         private void tick()
@@ -357,10 +357,12 @@ namespace Trainline_Sim_Windows_Testing
                 x.NewArrivals(true);
             }
             buttonTimeDisplay.Text = Convert.ToString(globalClock);
-            testValue += r.Next(1, 10);
+            testValue += r.Next(1, 40);
             updatePassInfoWaiting(0);
-            passengerForm.updateGraph();
-
+            if(passengerForm.Visible == true)
+            {
+                passengerForm.updateGraph();
+            }
         }
 
 
@@ -369,11 +371,12 @@ namespace Trainline_Sim_Windows_Testing
             //if array is full
             if(position == 8)
             {
-                for(int count = 1; count <= 7; count++)
+                for(int count = 0; count <= 6; count++)
                 {
-                    passengerForm.pointsArray[count] = passengerForm.pointsArray[count - 1];
+                    passengerForm.pointsArray[count] = passengerForm.pointsArray[count + 1];
                 }
                 passengerForm.pointsArray[7] = testValue;
+                passengerForm.originValue += 1;
             }
             else
             {

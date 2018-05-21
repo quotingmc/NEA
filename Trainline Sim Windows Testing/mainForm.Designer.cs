@@ -334,7 +334,7 @@
             // timerClock
             // 
             this.timerClock.Enabled = true;
-            this.timerClock.Interval = 1000;
+            this.timerClock.Interval = 250;
             this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
             // 
             // mainForm

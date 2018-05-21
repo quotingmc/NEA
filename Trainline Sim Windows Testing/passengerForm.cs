@@ -16,6 +16,7 @@ namespace Trainline_Sim_Windows_Testing
     {
         public int[] pointsArray = { 0,0,0,0,0,0,0,0};
         public int[] pointsArray2 = { 60, 78, 130, 180, 220, 260, 200, 193 };
+        public int originValue = 0;
 
         public passengerForm()
         {
@@ -47,11 +48,11 @@ namespace Trainline_Sim_Windows_Testing
             for (int i = 0; i < pointsArray.Length; i++)
             {
                 chartPassengerInfo.Series[0].Points.Add(pointsArray[i]);
+                chartPassengerInfo.Series[0].Points[i].AxisLabel = Convert.ToString(originValue+i);
             }
 
             for (int i = 0; i < pointsArray2.Length; i++)
             {
-
                 chartPassengerInfo.Series[1].Points.Add(pointsArray2[i]);
             }
         }
